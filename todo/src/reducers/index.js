@@ -17,11 +17,10 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case TODO_ADD:
-      const { todos } = state
-      todos.unshift(action.payload)
-      console.log('IN REDUCER', todos)
-      return Object.assign({}, state, { todos })
-
+      // return { ...state, todos: state.todos.concat(action.payload) }
+      return Object.assign({}, state, {
+        todos: state.todos.concat(action.payload)
+      })
     case TODO_DELETE:
       return state
     case TODO_TOGGLE:

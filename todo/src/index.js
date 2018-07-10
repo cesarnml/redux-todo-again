@@ -11,7 +11,7 @@ import './index.css'
 const store = createStore(rootReducer)
 
 store.subscribe(() => {
-  console.log('State Changes', store.getState())
+  console.log('STORE HAS CHANGED, state is: ', store.getState())
 })
 
 render(

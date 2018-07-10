@@ -5,7 +5,7 @@ import Todo from '../components/Todo'
 
 class TodoList extends Component {
   render () {
-    console.log('IN TODO LIST', this.props.todos)
+    console.log('IN TODO_LIST', this.props.todos)
     return (
       <div>
         {this.props.todos.map((todo) => <Todo key={todo.value} todo={todo} />)}
