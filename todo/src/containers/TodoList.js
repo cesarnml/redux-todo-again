@@ -32,6 +32,6 @@ class TodoList extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { todos: state.todos.todos, filter: state.visibilityFilter }
+  return { todos: state.todos, filter: state.visibilityFilter }
 }
 export default connect(mapStateToProps)(TodoList)

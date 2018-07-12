@@ -24,7 +24,7 @@ const Todo = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  return { todos: state.todos.todos }
+  return { todos: state.todos }
 }
 
 export default connect(mapStateToProps, { deleteTodo, toggleTodo })(Todo)
