@@ -1,37 +1,32 @@
-export const TODO_ADD = 'TODO_ADD'
-export const TODO_DELETE = 'TODO_DELETE'
-export const TODO_TOGGLE = 'TODO_TOGGLE'
-export const TODOS_SHOW_ALL = 'TODOS_SHOW_ALL'
-export const TODOS_SHOW_COMPLETED = 'TODOS_SHOW_COMPLETED'
-export const TODOS_SHOW_ACTIVE = 'TODOS_SHOW_ACTIVE'
+export const ADD_TODO = 'ADD_TODO'
+export const DELETE_TODO = 'DELETE_TODO'
+export const TOGGLE_TODO = 'TOGGLE_TODO'
+
+export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
+export const SHOW_ALL = 'SHOW_ALL'
+export const SHOW_COMPLETED = 'SHOW_COMPLETED'
+export const SHOW_ACTIVE = 'SHOW_ACTIVE'
 
 let counter = 2
 
-export const addTodo = (newTodo) => {
+export const addTodo = (text) => {
   const todo = {
-    value: newTodo,
+    value: text,
     id: counter++,
     completed: false
   }
-  return { type: TODO_ADD, payload: todo }
+  return { type: ADD_TODO, payload: todo }
 }
 
 export const deleteTodo = (id) => {
-  return { type: TODO_DELETE, payload: id }
+  return { type: DELETE_TODO, payload: id }
 }
 
-export const toggleTodo = () => {
-  return { type: TODO_TOGGLE }
+export const toggleTodo = (id) => {
+  return { type: TOGGLE_TODO, payload: id }
 }
 
-export const showAllTodos = () => {
-  return { type: TODOS_SHOW_ALL }
-}
-
-export const showCompletedTodos = () => {
-  return { type: TODOS_SHOW_COMPLETED }
-}
-
-export const showActiveTodos = () => {
-  return { type: TODOS_SHOW_ACTIVE }
+export const setVisibilityFilter = (filter) => {
+  return { type: SET_VISIBILITY_FILTER, payload: filter }
 }

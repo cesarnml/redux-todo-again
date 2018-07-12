@@ -1,0 +1,11 @@
+.completedTodo {
+  display: inline-block;
+  list-style: none;
+  text-decoration: line-through;
+}
+
+.activeTodo {
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+}
