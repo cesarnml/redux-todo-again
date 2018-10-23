@@ -25,7 +25,8 @@ class TodoListContainer extends Component {
   }
 
   render () {
-    const { todos, visibilityFilter, deleteTodo, toggleTodo } = this.props
+    const { todos } = this.props
+    const { visibilityFilter, deleteTodo, toggleTodo } = this.props
     const visibleTodos = this.visibleTodos(todos, visibilityFilter)
     return (
       <div>
