@@ -1,30 +1,20 @@
 import React from 'react'
-import { connect } from 'react-redux'
-
-import { deleteTodo, toggleTodo } from '../actions'
-
 import './Todo.css'
 
-const Todo = (props) => {
-  console.log('in Todo', props)
-
+const Todo = ({ todo, deleteTodo, toggleTodo }) => {
   return (
     <div>
       <li
-        className={props.todo.completed ? 'completedTodo' : 'activeTodo'}
+        className={todo.completed ? 'completedTodo' : 'activeTodo'}
         onClick={() => {
-          props.toggleTodo(props.todo.id)
+          toggleTodo(todo.id)
         }}
       >
-        {props.todo.value}
+        {todo.value}
       </li>
-      <button onClick={() => props.deleteTodo(props.todo.id)}>X</button>
+      <button onClick={() => deleteTodo(todo.id)}>X</button>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return { todos: state.todos }
-}
-
-export default connect(mapStateToProps, { deleteTodo, toggleTodo })(Todo)
+export default Todo
